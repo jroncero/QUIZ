@@ -18,7 +18,7 @@ exports.author = function(req, res) {
 
 exports.index = function(req, res) {
    models.Quiz.findAll().success(function(quizes){
-   res.render('quizes/indes.ejs', { quizes: quizes});
+   res.render('quizes/index.ejs', { quizes: quizes});
 });
 };
 
@@ -34,5 +34,5 @@ models.Quiz.find(req.params.quizId).success(function(quiz){
         } else {
 		res.render('quizes/answer', {quiz: quiz, respuesta: 'Incorrecto'});
         }
-})
-};
+});
+}
